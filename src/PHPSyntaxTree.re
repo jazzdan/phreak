@@ -94,6 +94,7 @@ type classItem =
   | InstanceMethod (classItemVisibility, functionDefinition)
   | StaticMethod (classItemVisibility, functionDefinition)
   | StaticVar (classItemVisibility, variableDeclaration)
+  | InstanceVar (classItemVisibility, variableDeclaration)
   | StaticConst (classItemVisibility, identifier, expression);
 
 type abstractClause = | Concrete | Abstract;

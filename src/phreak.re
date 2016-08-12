@@ -1,3 +1,6 @@
+/*
+ * vim: set ft=reason:
+ */
 open Common;
 open PHPSyntaxTree;
 open PHPSyntaxTreePrinter;

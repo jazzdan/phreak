@@ -368,10 +368,11 @@ method_definition:
     class_item_visibility T_STATIC function_definition      {   StaticMethod($1,$3) }
   | class_item_visibility          function_definition      { InstanceMethod($1,$2) }
 ;
-/* TODO add instance variable visability */
+
 field_definition:
-    class_item_visibility T_STATIC variable_declaration                   { StaticVar  ($1,$3) }
-  | class_item_visibility T_CONST identifier T_EQ expression T_SEMICOLON  { StaticConst($1,$3,$5) }
+    class_item_visibility T_STATIC variable_declaration                    { StaticVar   ($1,$3) }
+  | class_item_visibility T_CONST identifier T_EQ expression T_SEMICOLON   { StaticConst ($1,$3,$5) }
+  | class_item_visibility variable_declaration                             { InstanceVar ($1,$2) }
 ;
 
 class_item_list:

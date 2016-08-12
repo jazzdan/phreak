@@ -1,3 +1,6 @@
+/*
+ * vim: set ft=reason:
+ */
 open PHPSyntaxTree;
 
 let listToString lfun ll sepa =>
@@ -164,7 +167,7 @@ let toString_expression_list = toString_expression_list toString_expression;
 
 let toString_variableDeclaration vd =>
   switch vd {
-  | VarDecl v => toString_variable v
+  | VarDecl v => toString_variable v ^ ";" /* TODO maybe don't print the ; here */
   | VarDeclAssig v e [@implicit_arity] => toString_variable v ^ " = " ^ toString_expression e
   };
 
@@ -258,6 +261,8 @@ let toString_class (Class abstractDef classId extendsDef items [@implicit_arity]
       };
     let itemStr it =>
       switch it {
+      | InstanceVar vis varDecl [@implicit_arity] => 
+        indAkk ^ visStr vis ^ " " ^ toString_variableDeclaration varDecl
       | InstanceMethod vis funDef [@implicit_arity] =>
         indAkk ^ visStr vis ^ " " ^ toString_function_basic funDef "" indAkk ind
       | StaticMethod vis funDef [@implicit_arity] =>

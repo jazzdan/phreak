@@ -1,3 +1,6 @@
+/*
+ * vim: set ft=reason:
+ */
 type tokenData = | TokenData (string, int, int);
 
 type constantLiteral =
@@ -84,11 +87,11 @@ type functionDefinition = | Function (identifier, formalArgsList, statement);
 
 type classItemVisibility = | Public | Protected | Private;
 
-/* TODO Add instanceVar */
 type classItem =
   | InstanceMethod (classItemVisibility, functionDefinition)
   | StaticMethod (classItemVisibility, functionDefinition)
   | StaticVar (classItemVisibility, variableDeclaration)
+  | InstanceVar (classItemVisibility, variableDeclaration)
   | StaticConst (classItemVisibility, identifier, expression);
 
 type abstractClause = | Concrete | Abstract;

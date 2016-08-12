@@ -2,7 +2,6 @@
 
 require 'diffy'
 require 'highline'
-require 'awesome_print'
 
 def run_test(test_file)
   output = `cat #{@test_path}/#{test_file} | ./#{@binary_path}`

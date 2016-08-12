@@ -1,5 +1,11 @@
 all: phreak
 
+test: all
+	cd test && ./test.rb && cd ..
+
+test_write: all
+	cd test && ./test.rb ENABLE_WRITE_MODE && cd ..
+
 common:
 	rebuild Common.native
 

@@ -7,19 +7,19 @@ test_write: all
 	cd test && ./test.rb ENABLE_WRITE_MODE && cd ..
 
 common:
-	rebuild Common.native
+	rebuild -use-ocamlfind src/Common.native
 
 phpsyntaxtreeprinter: phpsyntaxtree
-		rebuild PHPSyntaxTreePrinter.native
+	rebuild -use-ocamlfind src/PHPSyntaxTreePrinter.native
 
 phpsyntaxtree: common
-	rebuild PHPSyntaxTree.native
+	rebuild -use-ocamlfind src/PHPSyntaxTree.native
 
 phpparser: phpsyntaxtree
-	rebuild -use-menhir phpparser.native
+	rebuild -use-ocamlfind -use-menhir src/phpparser.native
 
 phplexer: phpparser
-	rebuild phplexer.native
+	rebuild -use-ocamlfind src/phplexer.native
 
 phreak: phpsyntaxtree phpsyntaxtreeprinter
-	rebuild phreak.native
+	rebuild -use-ocamlfind src/phreak.native

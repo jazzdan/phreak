@@ -1,3 +1,6 @@
+/*
+ * vim: set ft=reason:
+ */
 open Common;
 
 /* Token data: file name, line number, line offset, token */

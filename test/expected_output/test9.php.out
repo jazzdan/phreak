@@ -1,0 +1,27 @@
+class C
+{
+    public static $v1 = 1
+    public const v2 = 2
+    public function v2()
+    {
+        return "hello from v2! (C)";
+    }
+
+    public function __construct()
+    {
+        define(self::v2, "to jest self::v2");
+    }
+
+}
+
+class D extends C
+{
+    public function v2()
+    {
+        return "hello from v2! (D)";
+    }
+
+}
+
+
+

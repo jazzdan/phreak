@@ -1,6 +1,6 @@
 <?php
 
 class Foo {
-     const HELLO = "world";
+    const HELLO = "world";
     public $foo;
 }

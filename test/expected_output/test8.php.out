@@ -1,0 +1,33 @@
+class A
+{
+    public static $x = 15
+    public static $y = 2
+    public static $z = 3
+    public function __construct()
+    {
+        $this->e = "eee";
+        $this->f = "fff";
+        $this->g = "\n";
+    }
+
+    public function f2()
+    {
+        $this->e = "eee";
+        $this->f = "fff";
+        $this->g = "\n";
+    }
+
+    public function f3()
+    {
+        $this->e = "eee";
+        $this->f = "fff";
+        $this->g = "\n";
+    }
+
+    public static $x2 = 150
+    public static $y2 = 20
+    public static $z2 = 30
+}
+
+
+
